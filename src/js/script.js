@@ -1,7 +1,7 @@
 // Typing //
 
 const typingElement = document.querySelector(".typing");
-const textList = ["diseñador web", "desarrollador web"];
+const textList = ["Diseñador web", "Desarrollador de Software"];
 let index = 0;
 let letterIndex = 0;
 let isDeleting = false;
