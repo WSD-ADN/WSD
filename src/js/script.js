@@ -29,6 +29,7 @@ type();
 
 //--------------------------------
 
+
 //------------- Navegacion -------------------
 
 const nav = document.querySelector('.nav'),
@@ -109,3 +110,42 @@ const nav = document.querySelector('.nav'),
 //----------------------------------------
 
 //----------------------------------------
+//--- Color barra --------------//
+// Obtén la referencia al elemento aside
+
+var miAside = document.getElementById('miAside');
+
+// Añade un event listener para el evento de hashchange (cambio en el fragmento de URL)
+window.addEventListener('hashchange', function() {
+    // Obtén el fragmento de URL actual
+    var hash = window.location.hash;
+
+    // Restaura el estilo por defecto
+    miAside.style.backgroundColor = ''; // Establece el color de fondo a vacío para restaurar el estilo por defecto
+    miAside.style.backgroundImage = 'none'; // Establece la imagen de fondo a none para restaurar el estilo por defecto
+    miAside.style.borderRight = ''; // Establece el borde derecho a vacío para restaurar el estilo por defecto
+    miAside.style.transition = ''; // Restaura la transición a vacío para restaurar el estilo por defecto
+
+    // Si el fragmento de URL es #portafolio, aplica el borde derecho y el color de fondo en el aside con una transición de 1 segundo
+    if (hash === '#portafolio') {
+        miAside.style.borderRight = 'thin solid rgb(255, 208, 0)'; // Aplica el borde derecho con el color rgb(255, 208, 0)
+        miAside.style.backgroundColor = '#232734'; // Aplica el color de fondo #232734
+        miAside.style.transition = 'all 1s ease'; // Aplica una transición de 1 segundo en todos los estilos
+    }
+    // Si el fragmento de URL es #about o #contact, cambia el color de fondo del aside con una transición de 1 segundo
+    else if (hash === '#about' || hash === '#contact') {
+        // Cambia el color de fondo a #232734 con una transición de 1 segundo
+        miAside.style.backgroundColor = '#232734';
+        miAside.style.transition = 'all 1s ease'; // Aplica una transición de 1 segundo en todos los estilos
+    }
+    // Para cualquier otro fragmento de URL, restaura el estilo por defecto
+    else {
+        miAside.style.backgroundColor = ''; // Restaura el color de fondo a vacío para restaurar el estilo por defecto
+        miAside.style.borderRight = ''; // Restaura el borde derecho a vacío para restaurar el estilo por defecto
+        miAside.style.transition = ''; // Restaura la transición a vacío para restaurar el estilo por defecto
+    }
+});
+
+
+
+//../build/img/portafoliofondo.jpg
