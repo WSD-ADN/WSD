@@ -136,7 +136,7 @@ window.addEventListener('hashchange', function() {
     else if (hash === '#about' || hash === '#contact') {
         // Cambia el color de fondo a #232734 con una transición de 1 segundo
         miAside.style.backgroundColor = '#232734';
-        miAside.style.transition = 'all 1s ease'; // Aplica una transición de 1 segundo en todos los estilos
+        miAside.style.transition = 'all 1.5s ease'; // Aplica una transición de 1 segundo en todos los estilos
     }
     // Para cualquier otro fragmento de URL, restaura el estilo por defecto
     else {
