@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
             margin: 1,
             filename: "documento.pdf",
             image: {
-              type: "jpeg",
+              type: "png",
               quality: 1.0,
             },
             html2canvas: {
