@@ -35,3 +35,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const year = document.querySelector(".year");
   const currentYear = new Date().getFullYear();
   year.textContent = currentYear;
+
+  const callback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.target === document.documentElement) {
+        const windowWidth = window.innerWidth;
+        if (windowWidth < 1023) {
+          // Cambiar el estilo cuando el ancho de la ventana es menor que 1023
+          changeParagraph();
+        } else {
+          // Revertir el estilo cuando el ancho de la ventana es mayor o igual a 1023
+          revertParagraph();
+        }
+      }
+    });
+  };
+  
